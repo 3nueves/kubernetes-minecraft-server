@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -5,10 +6,14 @@ metadata:
   namespace: minecraft
   labels:
     app: minecraft-server
+  annotations:
+    metallb.universe.tf/address-pool: aiuken
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
-    - port: 25565
-      nodePort: 30565
+    - name: minecraft
+      protocol: TCP
+      port: 25565
+      targetPort: 25565
   selector:
     app: minecraft-server

@@ -32,7 +32,7 @@ spec:
           - name:  EULA
             value: 'TRUE'
           - name: MODE
-            value: creative
+            value: survival
           - name: MOTD
             value: Your super-cool minecraft server
           - name: ALLOW_FLIGHT
